@@ -1,0 +1,137 @@
+// -------------------------------------------------------------------------
+// ABOUT THE INTERFACE SHEET
+// -------------------------------------------------------------------------
+
+// This stylesheet is for interface components like buttons, forms, labels, navbar, tables, etc.
+
+// -------------------------------------------------------------------------
+// BUTTONS
+// -------------------------------------------------------------------------
+
+.btn {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    white-space: nowrap;
+    // Font
+    font-family: $font-family-sans-serif;
+    line-height: $line-height-base;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    // Color
+    background-color: $btn-color;
+    // Border
+    border: 1px solid transparent;
+    border-radius: 5px;
+    // Size
+    padding: 15px 20px;
+}
+
+.btn:hover, .btn:focus {
+    color: $btn-color-hover;
+    text-decoration: none;
+  }
+
+.btn:active {
+    outline: 0;
+    background-image: none;
+  }
+
+// -------------------------------------------------------------------------
+// FORMS
+// -------------------------------------------------------------------------
+
+// Normalize non-control form elements
+
+// Remove default fieldset styles.
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+legend {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: $line-height-computed;
+    font-size: ($font-size-base * 1.5);
+    line-height: inherit;
+    border: 0;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+// Reset height for textareas
+// Allow only vertical resizing of textareas.
+  textarea {
+    height: auto;
+    resize: vertical;
+  }
+
+
+// Normalize form controls
+
+// Position radios and checkboxes better
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 4px 0 0;
+  margin-top: 1px \9; /* IE8-9 */
+  line-height: normal;
+}
+
+// Set the height of select and file controls to match text inputs
+input[type="file"] {
+  display: block;
+}
+
+// Make multiple select elements height not fixed
+select[multiple],
+select[size] {
+  height: auto;
+}
+
+// Fix optgroup Firefox bug per https://github.com/twbs/bootstrap/issues/7611
+select optgroup {
+  font-size: inherit;
+  font-style: inherit;
+  font-family: inherit;
+}
+
+// Fix for Chrome number input
+// Setting certain font-sizes causes the `I` bar to appear on hover of the bottom increment button.
+// See https://github.com/twbs/bootstrap/issues/8350 for more.
+input[type="number"] {
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    height: auto;
+  }
+}
+
+// -------------------------------------------------------------------------
+// MISC ELEMENTS
+// -------------------------------------------------------------------------
+
+// A better looking default horizontal rule
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+// Remove the gap between images, videos, audio and canvas and the bottom of
+// their containers: h5bp.com/i/440
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
