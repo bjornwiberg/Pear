@@ -2,47 +2,126 @@
 // ABOUT THE INTERFACE SHEET
 // -------------------------------------------------------------------------
 
-// This stylesheet is for interface components like buttons, forms, labels, navbar, tables, etc.
+
+// This stylesheet is for interface components like navs, buttons, lists, forms, labels, navbar, tables, etc.
+
+
+// -------------------------------------------------------------------------
+// NAVS
+// -------------------------------------------------------------------------
+
+
+// When used on an `ol` or `ul`, this class throws the list into horizontal mode
+// e.g.:
+//   <ul class=nav>
+//       <li><a href=#>Home</a></li>
+//       <li><a href=#>About</a></li>
+//       <li><a href=#>Portfolio</a></li>
+//       <li><a href=#>Contact</a></li>
+//   </ul>
+
+.nav {
+    list-style: none;
+    margin-left: 0;
+    @include clearfix();
+
+    > li {
+
+        &,
+        > a {
+            display: inline-block;
+           *display: inline;
+            zoom: 1;
+        }
+    }
+}
+
 
 // -------------------------------------------------------------------------
 // BUTTONS
 // -------------------------------------------------------------------------
 
+
+// Notes: 
+
+// Use the .btn class and then .btn type classes for further options, e.g.:
+//    <a href="#" class="btn btn-primary">Get Started</a>
+//    <a href="#" class="btn btn-secondary">More Info</a>
+
+// Be careful with drop shadows – if not done correctly they can cause blurriness on retina displays.
+
 .btn {
+    // Basics and normalize
     display: inline-block;
     vertical-align: middle;
     cursor: pointer;
     white-space: nowrap;
-    // Font
-    font-family: $font-family-sans-serif;
+    margin: 0;
+    // Text
+    font-family: inherit;
     line-height: $line-height-base;
     text-align: center;
     text-decoration: none;
     color: white;
-    // Color
-    background-color: $btn-color;
     // Border
-    border: 1px solid transparent;
+    border: none;
     border-radius: 5px;
     // Size
     padding: 15px 20px;
+    // Color Transition
+    -webkit-transition: 0.1s linear -webkit-box-shadow;
+    -moz-transition: 0.1s linear -moz-box-shadow;
+    -ms-transition: 0.1s linear box-shadow;
+    -o-transition: 0.1s linear box-shadow;
+    transition: 0.1s linear box-shadow;
 }
 
+
 .btn:hover, .btn:focus {
-    color: $btn-color-hover;
+    color: darken($color-primary, 15%);
     text-decoration: none;
   }
 
+
 .btn:active {
-    outline: 0;
+    outline: none;
     background-image: none;
   }
+
+
+// Types:
+
+.btn-primary {
+    background-color: $color-primary;
+}
+
+
+.btn-secondary {
+    background-color: $color-secondary;
+}
+
+
+// -------------------------------------------------------------------------
+// LISTS
+// -------------------------------------------------------------------------
+
+
+// Remove vertical spacing from nested lists.
+
+li {
+    > ul,
+    > ol {
+         margin-bottom:0;
+      }
+}
+
 
 // -------------------------------------------------------------------------
 // FORMS
 // -------------------------------------------------------------------------
 
-// Normalize non-control form elements
+
+// HERE BELOW: Normalize non-control form elements
 
 // Remove default fieldset styles.
 fieldset {
@@ -50,6 +129,7 @@ fieldset {
     margin: 0;
     padding: 0;
 }
+
 
 legend {
     display: block;
@@ -61,11 +141,13 @@ legend {
     border: 0;
 }
 
+
 label {
     display: inline-block;
     margin-bottom: 5px;
     font-weight: bold;
 }
+
 
 // Reset height for textareas
 // Allow only vertical resizing of textareas.
@@ -75,7 +157,7 @@ label {
   }
 
 
-// Normalize form controls
+// HERE BELOW: Normalize form controls
 
 // Position radios and checkboxes better
 input[type="radio"],
@@ -85,10 +167,12 @@ input[type="checkbox"] {
   line-height: normal;
 }
 
+
 // Set the height of select and file controls to match text inputs
 input[type="file"] {
   display: block;
 }
+
 
 // Make multiple select elements height not fixed
 select[multiple],
@@ -96,12 +180,14 @@ select[size] {
   height: auto;
 }
 
+
 // Fix optgroup Firefox bug per https://github.com/twbs/bootstrap/issues/7611
 select optgroup {
   font-size: inherit;
   font-style: inherit;
   font-family: inherit;
 }
+
 
 // Fix for Chrome number input
 // Setting certain font-sizes causes the `I` bar to appear on hover of the bottom increment button.
@@ -113,9 +199,69 @@ input[type="number"] {
   }
 }
 
+
 // -------------------------------------------------------------------------
-// MISC ELEMENTS
+// TABLES
 // -------------------------------------------------------------------------
+
+
+table {
+    width: 100%;
+}
+
+
+[colspan] {
+    text-align: center;
+}
+
+
+[rowspan] {
+    vertical-align: middle;
+}
+
+
+.numerical {
+    text-align: right;
+}
+
+
+// -------------------------------------------------------------------------
+// MEDIA
+// -------------------------------------------------------------------------
+
+
+// Fluid images
+img {
+    max-width: 100%;
+}
+
+
+// Images will not be fluid if you specify width and/or height
+img[width],
+img[height] {
+    max-width: none;
+}
+
+
+// Images in "figure" elements
+figure > img{
+    display:block;
+}
+
+
+// Remove the gap between images, videos, audio and canvas and the bottom of their containers: h5bp.com/i/440
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+
+// -------------------------------------------------------------------------
+// HR
+// -------------------------------------------------------------------------
+
 
 // A better looking default horizontal rule
 hr {
@@ -127,11 +273,23 @@ hr {
     padding: 0;
 }
 
-// Remove the gap between images, videos, audio and canvas and the bottom of
-// their containers: h5bp.com/i/440
-audio,
-canvas,
-img,
-video {
-    vertical-align: middle;
+
+// -------------------------------------------------------------------------
+// CODE BLOCK
+// -------------------------------------------------------------------------
+
+
+pre code {
+	word-wrap: normal;
+	white-space: -moz-pre-wrap;
+	white-space: pre-wrap; // http://css-tricks.com/almanac/properties/w/whitespace
+}
+
+pre {
+	white-space: pre;
+}
+
+code {
+	white-space: pre;
+	font-family: $font-family-monospace;
 }

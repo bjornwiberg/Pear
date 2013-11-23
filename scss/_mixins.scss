@@ -2,11 +2,14 @@
 // ABOUT MIXINS
 // -------------------------------------------------------------------------
 
-// All mixins go in this sheet.
+
+// ALL mixins go in this sheet (except for the ones used in the grid sheet).
+
 
 // -------------------------------------------------------------------------
 // MIXINS
 // -------------------------------------------------------------------------
+
 
 // Clearfix
 @mixin clearfix() {
@@ -22,6 +25,7 @@
 	    clear:both;
 	}
 }
+
 
 // Hide from both screenreaders and browsers: h5bp.com/u
 // Mostly used to eliminate elements when scaling down in media queries

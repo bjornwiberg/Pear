@@ -2,24 +2,28 @@
 // ABOUT THE UTILITIES SHEET
 // -------------------------------------------------------------------------
 
+
 // The Utilities sheet has the Browsehappy prompt styling and print styles.
+
 
 // -------------------------------------------------------------------------
 // BROWSEHAPPY PROMPT
 // -------------------------------------------------------------------------
 
-// Browsehappy prompt
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
-    color: $text-color;
+    color: $color-text;
     padding: 0.2em 0;
 }
+
 
 // -------------------------------------------------------------------------
 // PRINT STYLES
 // Inlined to avoid required HTTP connection: h5bp.com/r
 // -------------------------------------------------------------------------
+
 
 @media print {
     * {

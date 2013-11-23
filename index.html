@@ -27,7 +27,7 @@
         <link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina.png" />
         <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png" />
 
-        <!-- CSS, Normalize First, minify for production -->
+        <!-- CSS, Normalize sheet first, minify for production -->
         <link rel="stylesheet" type='text/css' href=""/>
         
         <!-- Import web fonts using the link tag instead of CSS @import -->
@@ -41,9 +41,11 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chrome/‎">install Google Chrome</a> to experience this site.</p>
         <![endif]-->
 
+        
         <!-- Add content here -->
-        <p>Hello world! This is a site built with <a href="https://github.com/jrdnbwmn/Pear" target="_blank">Pear</a>.</p>
+        <p>Hello world! This is <a href="https://github.com/jrdnbwmn/Pear" target="_blank">Pear</a>.</p>
 
+        
         <!-- Reference jQuery -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
@@ -53,12 +55,10 @@
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
         
     </body>

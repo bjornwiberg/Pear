@@ -2,37 +2,57 @@
 // ABOUT THE SECTIONS SHEET
 // -------------------------------------------------------------------------
 
+
 // By default, Pear has this stylesheet called "Sections". This is meant to be the place where you dump all the styling that hasn't already been covered in the Variables/Mixins, Grid, Interface, Media Queries, Typography, or Utilities stylesheets. It is divided up by "sections" of your site such as the header, body, sidebar, and footer so that you can stay more organized.
 
+
 // Obviously, if this type of stylesheet organization isn't your cup o' tea, feel free to change/switch/modify/adapt/alter to your heart's content.
+
 
 // -------------------------------------------------------------------------
 // *
 // -------------------------------------------------------------------------
 
+
+html {
+    overflow-y: scroll;
+    min-height: 100%;
+}
+
+
 body {
     background-color: #fff;
     margin: 0;
     padding: 0;
+	// Ala Trent Walton: http://trentwalton.com/2011/09/07/css-hyphenation
+    -webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	-o-hyphens: auto;
+	hyphens: auto;
 }
+
 
 // Remove text-shadow in selection highlight: h5bp.com/i
 // These selection rule sets have to be separate.
 // Color is set by default to your primary brand color.
 ::-moz-selection {
-    background: $brand-primary;
+    background: $color-primary;
     color: white;
     text-shadow: none;
 }
 ::selection {
-    background: $brand-primary;
+    background: $color-primary;
     color: white;
     text-shadow: none;
 }
 
+
 // -------------------------------------------------------------------------
 // HEADER
 // -------------------------------------------------------------------------
+
+
 
 
 
@@ -42,13 +62,18 @@ body {
 
 
 
+
+
 // -------------------------------------------------------------------------
 // BODY
 // -------------------------------------------------------------------------
 
 
 
+
+
 // -------------------------------------------------------------------------
 // FOOTER
 // -------------------------------------------------------------------------
+
 
